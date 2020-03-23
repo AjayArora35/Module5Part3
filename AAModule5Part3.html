@@ -10,15 +10,16 @@
             <p class="greeting-id">The ID is </p>
             <p class="greeting-content">The content is </p>
         </div>
-
+		var tt;
 		<script type="text/javascript" >		
 			$(document).ready(function() {
 				$.ajax({
 					url: "https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=spc_common&$group=spc_common&$limit=5000"
 				}).then(function(data) {
+					tt = data;
 				   //$('.greeting-id').append(data.id);
 				   //$('.greeting-content').append(data.content);
-				   alert(data);
+				   alert(data[0].spc_common);
 				});
 			});		
 		
