@@ -9,17 +9,35 @@
         <div>
             <p class="greeting-id">The ID is </p>
             <p class="greeting-content">The content is </p>
+				<select class="ddtt" id="ddtt">
+					<option selected="selected">Select</option>
+                </select>			
         </div>
-		var tt;
 		<script type="text/javascript" >		
+		var tt;
+		var boro
 			$(document).ready(function() {
 				$.ajax({
 					url: "https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=spc_common&$group=spc_common&$limit=5000"
 				}).then(function(data) {
 					tt = data;
+					for(var i=0;i<data.length;i++)
+					{
+                        var opt = new Option(data[i].spc_common);
+                        $("#ddtt").append(opt);
+                    }
 				   //$('.greeting-id').append(data.id);
 				   //$('.greeting-content').append(data.content);
 				   alert(data[0].spc_common);
+				});
+
+				$.ajax({
+					url: "https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=boroname&$group=boroname&$limit=5000"
+				}).then(function(data) {
+					boro = data;
+				   //$('.greeting-id').append(data.id);
+				   //$('.greeting-content').append(data.content);
+				   alert(data[0].boroname);
 				});
 			});		
 		
