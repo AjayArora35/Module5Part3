@@ -14,10 +14,11 @@
 		<script type="text/javascript" >		
 			$(document).ready(function() {
 				$.ajax({
-					url: "http://rest-service.guides.spring.io/greeting"
+					url: "https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=spc_common&$group=spc_common&$limit=5000"
 				}).then(function(data) {
-				   $('.greeting-id').append(data.id);
-				   $('.greeting-content').append(data.content);
+				   //$('.greeting-id').append(data.id);
+				   //$('.greeting-content').append(data.content);
+				   alert(data);
 				});
 			});		
 		
