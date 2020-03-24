@@ -143,7 +143,7 @@
 						var fairCounter =0;
 						var poorCounter =0;
 						
-						var counters = [];
+						var counters = [0,0,0,0,0,0,0,0,0,0,0,0];
 						var totalrecords;
 						$.ajax({
 							url: "https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=health,steward&$where=spc_common='" + ttselected + "'AND boroname='" + boroselected + "'&$limit=50000"
