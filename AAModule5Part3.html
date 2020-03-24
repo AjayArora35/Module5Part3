@@ -19,6 +19,12 @@
 					<option selected="selected">Select</option>
                 </select>			
         </div>
+		<div>
+			<p id="goodratio"></p>		
+			<p id="fairratio"></p>		
+			<p id="poorratio"></p>		
+		
+		</div>
 		<script type="text/javascript" >		
 		var tt;
 		var boro
@@ -114,9 +120,9 @@
 								if(data[i].health == "Poor" && data[i].steward == "None")
 									counters[11]++;
 							}
-							document.write ((goodCounter/totalrecords) * 100).toFixed(2);
-							document.write ((fairCounter/totalrecords) * 100).toFixed(2);
-							document.write ((poorCounter/totalrecords) * 100).toFixed(2);
+							$("goodratio").val = ((goodCounter/totalrecords) * 100).toFixed(2);
+							$("fairratio").val = ((fairCounter/totalrecords) * 100).toFixed(2);
+							$("poorratio").val = ((poorCounter/totalrecords) * 100).toFixed(2);
 							
 							
 						   //$('.greeting-id').append(data.id);
