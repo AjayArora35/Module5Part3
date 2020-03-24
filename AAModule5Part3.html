@@ -120,9 +120,9 @@
 								if(data[i].health == "Poor" && data[i].steward == "None")
 									counters[11]++;
 							}
-							$("goodratio").val = ((goodCounter/totalrecords) * 100).toFixed(2);
-							$("fairratio").val = ((fairCounter/totalrecords) * 100).toFixed(2);
-							$("poorratio").val = ((poorCounter/totalrecords) * 100).toFixed(2);
+							document.getElementById("goodratio").innerHTML = ((goodCounter/totalrecords) * 100).toFixed(2);
+							document.getElementById("fairratio").innerHTML = ((fairCounter/totalrecords) * 100).toFixed(2);
+							document.getElementById("poorratio").innerHTML = ((poorCounter/totalrecords) * 100).toFixed(2);
 							
 							
 						   //$('.greeting-id').append(data.id);
