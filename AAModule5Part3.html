@@ -22,6 +22,8 @@
 		<script type="text/javascript" >		
 		var tt;
 		var boro
+		var ttselected;
+		var boroselected;
 			$(document).ready(function() {
 				$.ajax({
 					url: "https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=spc_common&$group=spc_common&$limit=5000"
@@ -61,7 +63,11 @@
 					var selectedText = $(this).find("option:selected").text();
 					var selectedValue = $(this).val();
 					alert("Selected Text: " + selectedText + " Value: " + selectedValue);
-				});				
+					
+				});
+
+				if(ttselected && boroselected)
+					alert("here");
 			});		
 		
 		</script>
