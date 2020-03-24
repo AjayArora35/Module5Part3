@@ -70,7 +70,20 @@
 					ttselected = $(this).find("option:selected").text();
 					if(ttselected && boroselected)
 					{
-						alert("TODO call NY Tree service and retrieve some data on selection.");
+						$.ajax({
+							url: "https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=health,steward&$where=spc_common='" + ttselected + "'AND boroname='" + boroselected + "'&$limit=50000"
+						}).then(function(data) {
+							alert(data.length);
+							//for(var i=0;i<data.length;i++)
+							//{
+							//	var opt = new Option(data[i].boroname);
+							//	$("#ddboro").append(opt);
+							//}
+						   //$('.greeting-id').append(data.id);
+						   //$('.greeting-content').append(data.content);
+						   //alert(data[0].boroname);
+						});
+					
 					}
 				});
 			});		
