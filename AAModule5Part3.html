@@ -148,7 +148,7 @@
 						$.ajax({
 							url: "https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=health,steward&$where=spc_common='" + ttselected + "'AND boroname='" + boroselected + "'&$limit=50000"
 						}).then(function(data) {
-							alert(data.length);
+							//alert(data.length);
 							totalrecords = data.length;
 							
 							for(var i=0;i<data.length;i++)
@@ -192,19 +192,19 @@
 							document.getElementById("poorratio").innerHTML = ((poorCounter/totalrecords) * 100).toFixed(2);
 							
 							document.getElementById("1or2_g").innerHTML = ((counters[0]/goodCounter) * 100).toFixed(2);
-							document.getElementById("3or4_g").innerHTML = ((counters[0]/goodCounter) * 100).toFixed(2);
-							document.getElementById("4orMore_g").innerHTML = ((counters[0]/goodCounter) * 100).toFixed(2);
-							document.getElementById("None_g").innerHTML = ((counters[0]/goodCounter) * 100).toFixed(2);
+							document.getElementById("3or4_g").innerHTML = ((counters[1]/goodCounter) * 100).toFixed(2);
+							document.getElementById("4orMore_g").innerHTML = ((counters[2]/goodCounter) * 100).toFixed(2);
+							document.getElementById("None_g").innerHTML = ((counters[3]/goodCounter) * 100).toFixed(2);
 							
-							document.getElementById("1or2_f").innerHTML = ((counters[0]/goodCounter) * 100).toFixed(2);
-							document.getElementById("3or4_f").innerHTML = ((counters[0]/goodCounter) * 100).toFixed(2);
-							document.getElementById("4orMore_f").innerHTML = ((counters[0]/goodCounter) * 100).toFixed(2);
-							document.getElementById("None_f").innerHTML = ((counters[0]/goodCounter) * 100).toFixed(2);
+							document.getElementById("1or2_f").innerHTML = ((counters[4]/goodCounter) * 100).toFixed(2);
+							document.getElementById("3or4_f").innerHTML = ((counters[5]/goodCounter) * 100).toFixed(2);
+							document.getElementById("4orMore_f").innerHTML = ((counters[6]/goodCounter) * 100).toFixed(2);
+							document.getElementById("None_f").innerHTML = ((counters[7]/goodCounter) * 100).toFixed(2);
 
-							document.getElementById("1or2_p").innerHTML = ((counters[0]/goodCounter) * 100).toFixed(2);
-							document.getElementById("3or4_p").innerHTML = ((counters[0]/goodCounter) * 100).toFixed(2);
-							document.getElementById("4orMore_p").innerHTML = ((counters[0]/goodCounter) * 100).toFixed(2);
-							document.getElementById("None_p").innerHTML = ((counters[0]/goodCounter) * 100).toFixed(2);
+							document.getElementById("1or2_p").innerHTML = ((counters[8]/goodCounter) * 100).toFixed(2);
+							document.getElementById("3or4_p").innerHTML = ((counters[9]/goodCounter) * 100).toFixed(2);
+							document.getElementById("4orMore_p").innerHTML = ((counters[10]/goodCounter) * 100).toFixed(2);
+							document.getElementById("None_p").innerHTML = ((counters[11]/goodCounter) * 100).toFixed(2);
 
 						   //$('.greeting-id').append(data.id);
 						   //$('.greeting-content').append(data.content);
