@@ -114,9 +114,9 @@
 								if(data[i].health == "Poor" && data[i].steward == "None")
 									counters[11]++;
 							}
-							document.write (goodCounter/totalrecords);
-							document.write (fairCounter/totalrecords);
-							document.write (poorCounter/totalrecords);
+							document.write ((goodCounter/totalrecords) * 100).toFixed(2);
+							document.write ((fairCounter/totalrecords) * 100).toFixed(2);
+							document.write ((poorCounter/totalrecords) * 100).toFixed(2);
 							
 							
 						   //$('.greeting-id').append(data.id);
