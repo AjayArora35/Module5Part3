@@ -66,11 +66,13 @@
 					//var selectedValue = $(this).val();
 					//alert("Selected Text: " + selectedText + " Value: " + selectedValue);
 					boroselected = $(this).find("option:selected").text();
+					if(ttselected && boroselected)
+					{
+						alert("here");
+					}
 				});
 			});		
 		
-			if(ttselected && boroselected)
-				alert("here");
 
 		</script>
 
