@@ -26,20 +26,6 @@
 		var boroselected;
 			$(document).ready(function() {
 				$.ajax({
-					url: "https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=spc_common&$group=spc_common&$limit=5000"
-				}).then(function(data) {
-					tt = data;
-					for(var i=0;i<data.length;i++)
-					{
-                        var opt = new Option(data[i].spc_common);
-                        $("#ddtt").append(opt);
-                    }
-				   //$('.greeting-id').append(data.id);
-				   //$('.greeting-content').append(data.content);
-				   //alert(data[0].spc_common);
-				});
-
-				$.ajax({
 					url: "https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=boroname&$group=boroname&$limit=5000"
 				}).then(function(data) {
 					boro = data;
@@ -52,23 +38,39 @@
 				   //$('.greeting-content').append(data.content);
 				   //alert(data[0].boroname);
 				});
-				
+
 				$("#ddboro").change(function () {
 					//var selectedText = $(this).find("option:selected").text();
 					//var selectedValue = $(this).val();
-					ttselected = $(this).find("option:selected").text();
+					boroselected = $(this).find("option:selected").text();
 					//alert("Selected Text: " + selectedText + " Value: " + selectedValue);
 					
+					$.ajax({
+						url: "https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=spc_common&$group=spc_common&$where=boroname='" + boroselected +"'&$limit=5000"
+					}).then(function(data) {
+						tt = data;
+						for(var i=0;i<data.length;i++)
+						{
+							var opt = new Option(data[i].spc_common);
+							$("#ddtt").append(opt);
+						}
+					   //$('.greeting-id').append(data.id);
+					   //$('.greeting-content').append(data.content);
+					   //alert(data[0].spc_common);
+					});
 				});				
+
+
+				
 
 				$("#ddtt").change(function () {
 					//var selectedText = $(this).find("option:selected").text();
 					//var selectedValue = $(this).val();
 					//alert("Selected Text: " + selectedText + " Value: " + selectedValue);
-					boroselected = $(this).find("option:selected").text();
+					ttselected = $(this).find("option:selected").text();
 					if(ttselected && boroselected)
 					{
-						alert("here");
+						alert("TODO call NY Tree service and retrieve some data on selection.");
 					}
 				});
 			});		
