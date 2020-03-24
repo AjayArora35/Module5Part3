@@ -26,7 +26,7 @@
                 </select>			
         </div>
 		<div>
-			<p>Tree Health Ratio</p>
+			<p><bold>Tree Health Ratio</bold></p>
 			<table style="width:100%">
 			  <tr>
 				<th>Good Ratio</th>
@@ -41,28 +41,58 @@
 			</table>		
 		</div>
 		<div>
-			<p>Steward Ratio Good Health</p>
-			Steward activity 1 or 2: 	<p id="1or2_g"></p>		
-			Steward activity 3 or 4: 	<p id="3or4_g"></p>		
-			Steward activity 4 or More: <p id="4orMore_g"></p>		
-			Steward activity None: 		<p id="None_g"></p>		
-		
+			<p><bold>Steward Ratio Good Health</bold></p>
+			<table style="width:100%">
+				<tr>
+					<th>Steward activity 1 or 2</th>
+					<th>Steward activity 3 or 4</th>
+					<th>Steward activity 4 or More</th>
+					<th>Steward activity None</th>
+				</tr>
+				<tr>
+					<td><p id="1or2_g"></p></td>
+					<td><p id="3or4_g"></p></td>
+					<td><p id="4orMore_g"></p></td>
+					<td><p id="None_g"></p></td>
+					
+				</tr>
+			</table>	
 		</div>
 		<div>
-			<p>Steward Ratio Fair Health</p>
-			Steward activity 1 or 2: 	<p id="1or2_f"></p>		
-			Steward activity 3 or 4: 	<p id="3or4_f"></p>		
-			Steward activity 4 or More: <p id="4orMore_f"></p>		
-			Steward activity None: 		<p id="None_f"></p>		
-		
+			<p><bold>Steward Ratio Fair Health</bold></p>
+			<table style="width:100%">
+				<tr>
+					<th>Steward activity 1 or 2</th>
+					<th>Steward activity 3 or 4</th>
+					<th>Steward activity 4 or More</th>
+					<th>Steward activity None</th>
+				</tr>
+				<tr>
+					<td><p id="1or2_f"></p></td>
+					<td><p id="3or4_f"></p></td>
+					<td><p id="4orMore_f"></p></td>
+					<td><p id="None_f"></p></td>
+					
+				</tr>
+			</table>	
 		</div>
 		<div>
-			<p>Steward Ratio Poor Health</p>
-			Steward activity 1 or 2: 	<p id="1or2_p"></p>		
-			Steward activity 3 or 4: 	<p id="3or4_p"></p>		
-			Steward activity 4 or More: <p id="4orMore_p"></p>		
-			Steward activity None: 		<p id="None_p"></p>		
-		
+			<p><bold>Steward Ratio Poor Health</bold></p>
+			<table style="width:100%">
+				<tr>
+					<th>Steward activity 1 or 2</th>
+					<th>Steward activity 3 or 4</th>
+					<th>Steward activity 4 or More</th>
+					<th>Steward activity None</th>
+				</tr>
+				<tr>
+					<td><p id="1or2_p"></p></td>
+					<td><p id="3or4_p"></p></td>
+					<td><p id="4orMore_p"></p></td>
+					<td><p id="None_p"></p></td>
+					
+				</tr>
+			</table>	
 		</div>
 		<script type="text/javascript" >		
 		var tt;
@@ -161,8 +191,21 @@
 							document.getElementById("fairratio").innerHTML = ((fairCounter/totalrecords) * 100).toFixed(2);
 							document.getElementById("poorratio").innerHTML = ((poorCounter/totalrecords) * 100).toFixed(2);
 							
+							document.getElementById("1or2_g").innerHTML = ((counters[0]/goodCounter) * 100).toFixed(2);
+							document.getElementById("3or4_g").innerHTML = ((counters[0]/goodCounter) * 100).toFixed(2);
+							document.getElementById("4orMore_g").innerHTML = ((counters[0]/goodCounter) * 100).toFixed(2);
+							document.getElementById("None_g").innerHTML = ((counters[0]/goodCounter) * 100).toFixed(2);
 							
-							
+							document.getElementById("1or2_f").innerHTML = ((counters[0]/goodCounter) * 100).toFixed(2);
+							document.getElementById("3or4_f").innerHTML = ((counters[0]/goodCounter) * 100).toFixed(2);
+							document.getElementById("4orMore_f").innerHTML = ((counters[0]/goodCounter) * 100).toFixed(2);
+							document.getElementById("None_f").innerHTML = ((counters[0]/goodCounter) * 100).toFixed(2);
+
+							document.getElementById("1or2_p").innerHTML = ((counters[0]/goodCounter) * 100).toFixed(2);
+							document.getElementById("3or4_p").innerHTML = ((counters[0]/goodCounter) * 100).toFixed(2);
+							document.getElementById("4orMore_p").innerHTML = ((counters[0]/goodCounter) * 100).toFixed(2);
+							document.getElementById("None_p").innerHTML = ((counters[0]/goodCounter) * 100).toFixed(2);
+
 						   //$('.greeting-id').append(data.id);
 						   //$('.greeting-content').append(data.content);
 						   //alert(data[0].boroname);
