@@ -54,16 +54,18 @@
 				});
 				
 				$("#ddboro").change(function () {
-					var selectedText = $(this).find("option:selected").text();
-					var selectedValue = $(this).val();
-					alert("Selected Text: " + selectedText + " Value: " + selectedValue);
+					//var selectedText = $(this).find("option:selected").text();
+					//var selectedValue = $(this).val();
+					ttselected = $(this).find("option:selected").text();
+					//alert("Selected Text: " + selectedText + " Value: " + selectedValue);
+					
 				});				
 
 				$("#ddtt").change(function () {
-					var selectedText = $(this).find("option:selected").text();
-					var selectedValue = $(this).val();
-					alert("Selected Text: " + selectedText + " Value: " + selectedValue);
-					
+					//var selectedText = $(this).find("option:selected").text();
+					//var selectedValue = $(this).val();
+					//alert("Selected Text: " + selectedText + " Value: " + selectedValue);
+					boroselected = $(this).find("option:selected").text();
 				});
 
 				if(ttselected && boroselected)
