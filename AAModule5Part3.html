@@ -13,6 +13,12 @@
 					<option selected="selected">Select</option>
                 </select>			
         </div>
+		<div>
+				<select class="ddboro" id="ddboro">
+					<option selected="selected">Select</option>
+                </select>			
+		
+		</div>
 		<script type="text/javascript" >		
 		var tt;
 		var boro
@@ -35,6 +41,11 @@
 					url: "https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=boroname&$group=boroname&$limit=5000"
 				}).then(function(data) {
 					boro = data;
+					for(var i=0;i<data.length;i++)
+					{
+                        var opt = new Option(data[i].boroname);
+                        $("#ddboro").append(opt);
+                    }
 				   //$('.greeting-id').append(data.id);
 				   //$('.greeting-content').append(data.content);
 				   alert(data[0].boroname);
