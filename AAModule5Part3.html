@@ -34,7 +34,7 @@
                     }
 				   //$('.greeting-id').append(data.id);
 				   //$('.greeting-content').append(data.content);
-				   alert(data[0].spc_common);
+				   //alert(data[0].spc_common);
 				});
 
 				$.ajax({
@@ -48,8 +48,20 @@
                     }
 				   //$('.greeting-id').append(data.id);
 				   //$('.greeting-content').append(data.content);
-				   alert(data[0].boroname);
+				   //alert(data[0].boroname);
 				});
+				
+				$("#ddboro").change(function () {
+					var selectedText = $(this).find("option:selected").text();
+					var selectedValue = $(this).val();
+					alert("Selected Text: " + selectedText + " Value: " + selectedValue);
+				});				
+
+				$("#ddtt").change(function () {
+					var selectedText = $(this).find("option:selected").text();
+					var selectedValue = $(this).val();
+					alert("Selected Text: " + selectedText + " Value: " + selectedValue);
+				});				
 			});		
 		
 		</script>
