@@ -71,11 +71,13 @@
 						var metrics = {"12_g":0, "34_g":0, "4m_g":0, "n_g":0, "12_f":0, "34_f":0, "4m_f":0, "n_f":0, "12_p":0, "34_p":0, "4m_p":0, "n_p":0}
 						
 						var counters = [];
-						
+						var totalrecords;
 						$.ajax({
 							url: "https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=health,steward&$where=spc_common='" + ttselected + "'AND boroname='" + boroselected + "'&$limit=50000"
 						}).then(function(data) {
 							alert(data.length);
+							totalrecords = data.length;
+							
 							for(var i=0;i<data.length;i++)
 							{
 								if(data[i].health == "Good")
@@ -112,6 +114,11 @@
 								if(data[i].health == "Poor" && data[i].steward == "None")
 									counters[11]++;
 							}
+							document.write (goodCounter/totalrecords);
+							document.write (fairCounter/totalrecords);
+							document.write (poorCounter/totalrecords);
+							
+							
 						   //$('.greeting-id').append(data.id);
 						   //$('.greeting-content').append(data.content);
 						   //alert(data[0].boroname);
