@@ -20,9 +20,34 @@
                 </select>			
         </div>
 		<div>
-			<p id="goodratio">Good Ratio</p>		
-			<p id="fairratio">Fair Ratio</p>		
-			<p id="poorratio">Poor Ratio</p>		
+			<p>Tree Health Ratio</p>
+			Good Ratio: <p id="goodratio"></p>		
+			Fair Ratio: <p id="fairratio"></p>		
+			Poor Ratio: <p id="poorratio"></p>		
+		
+		</div>
+		<div>
+			<p>Steward Ratio Good Health</p>
+			Steward activity 1 or 2: 	<p id="1or2_g"></p>		
+			Steward activity 3 or 4: 	<p id="3or4_g"></p>		
+			Steward activity 4 or More: <p id="4orMore_g"></p>		
+			Steward activity None: 		<p id="None_g"></p>		
+		
+		</div>
+		<div>
+			<p>Steward Ratio Fair Health</p>
+			Steward activity 1 or 2: 	<p id="1or2_f"></p>		
+			Steward activity 3 or 4: 	<p id="3or4_f"></p>		
+			Steward activity 4 or More: <p id="4orMore_f"></p>		
+			Steward activity None: 		<p id="None_f"></p>		
+		
+		</div>
+		<div>
+			<p>Steward Ratio Poor Health</p>
+			Steward activity 1 or 2: 	<p id="1or2_p"></p>		
+			Steward activity 3 or 4: 	<p id="3or4_p"></p>		
+			Steward activity 4 or More: <p id="4orMore_p"></p>		
+			Steward activity None: 		<p id="None_p"></p>		
 		
 		</div>
 		<script type="text/javascript" >		
@@ -74,8 +99,6 @@
 						var fairCounter =0;
 						var poorCounter =0;
 						
-						var metrics = {"12_g":0, "34_g":0, "4m_g":0, "n_g":0, "12_f":0, "34_f":0, "4m_f":0, "n_f":0, "12_p":0, "34_p":0, "4m_p":0, "n_p":0}
-						
 						var counters = [];
 						var totalrecords;
 						$.ajax({
@@ -123,6 +146,7 @@
 							document.getElementById("goodratio").innerHTML = ((goodCounter/totalrecords) * 100).toFixed(2);
 							document.getElementById("fairratio").innerHTML = ((fairCounter/totalrecords) * 100).toFixed(2);
 							document.getElementById("poorratio").innerHTML = ((poorCounter/totalrecords) * 100).toFixed(2);
+							
 							
 							
 						   //$('.greeting-id').append(data.id);
